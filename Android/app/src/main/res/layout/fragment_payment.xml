@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PaymentFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_visa"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:src="@drawable/visa"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            />
+        <ImageView
+            android:id="@+id/img_mastercard"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            app:layout_constraintLeft_toRightOf="@id/img_visa"
+            android:src="@drawable/mastercard"
+            />
+        <EditText
+            android:id="@+id/txt_cardnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero de tarjeta"
+            app:layout_constraintTop_toBottomOf="@id/img_mastercard"
+            android:inputType="number"
+            />
+        <EditText
+            android:id="@+id/txt_expiration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_cardnumber"
+            android:hint="Fecha expiracion mm/aa"
+            android:maxLength="5"
+            android:inputType="number"
+            />
+        <EditText
+            android:id="@+id/txt_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="3"
+            android:inputType="number"
+            android:hint="CVV"
+            app:layout_constraintTop_toBottomOf="@id/txt_expiration"
+            />
+        <Button
+            android:id="@+id/btn_savepayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_cvv"
+            android:text="Guardar"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
